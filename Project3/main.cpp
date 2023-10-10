@@ -79,19 +79,14 @@ void insert(int heap[],int element) {
     heapify(heap, size, size-1);
 }
 
-// void buildheap() {
-//     int lastNode = (size/2) -1;
-//     for(int i = lastNode; i >= 0; i--) {
-//         heapify(i);
-//     }
-// }
+
 
 void heapify(int heap[],int n, int i)
 {
-    int largest = i; // Initialize largest as root
+    int largest = i; 
     int p = parent(i);
-    int l = 2 * i + 1; // left = 2*i + 1
-    int r = 2 * i + 2; // right = 2*i + 2
+    int l = 2 * i + 1; 
+    int r = 2 * i + 2; 
 
     if (p >= 0) { 
         if (heap[i] > heap[p]) { 
@@ -100,19 +95,18 @@ void heapify(int heap[],int n, int i)
         } 
     } 
  
-    // If left child is larger than root
+
     if (l < n && heap[l] > heap[largest])
         largest = l;
  
-    // If right child is larger than largest so far
+
     if (r < n && heap[r] > heap[largest])
         largest = r;
- 
-    // If largest is not root
+
     if (largest != i) {
         swap(heap[i], heap[largest]);
  
-        // Recursively heapify the affected sub-tree
+
         heapify(heap, n, largest);
     }
 }
