@@ -139,7 +139,7 @@ bool Graph::loadGraph(const string& filename, const string& direction) {
 
 void Graph::runDijkstra(int newSource, int destination, int flag) {
     int n = numVertices;
-    int source = newSource;
+    source = newSource;
     graphTraversed = true;
     fullTraversal = true;
 
@@ -236,7 +236,7 @@ void Graph::writePath(int s, int d) {
         path[pathSize] = s;
 
         cout << "Shortest path: ";
-        for(int i = pathSize; i > 0; i--) {
+        for(int i = pathSize; i >= 0; i--) {
             cout << path[i] << " ";
         }
         cout << endl << "The path weight is: " << distance[d] << endl;
@@ -255,7 +255,7 @@ void Graph::writePath(int s, int d) {
         path[pathSize] = s;
 
         cout << "Path not known to be shortest: ";
-        for(int i = pathSize; i > 0; i--) {
+        for(int i = pathSize; i >= 0; i--) {
             cout << path[i] << " ";
         }
         cout << endl << "The path weight is: " << distance[d] << endl;
@@ -274,7 +274,7 @@ void Graph::writePath(int s, int d) {
 
 void Graph::printAdjacencyLists() {
     for(int v = 0; v < numVertices; v++) {
-        cout << "Adjacency list for vertec " << v << ": ";
+        cout << "Adjacency list for vertex " << v << ": ";
 
         if(adjacencyLists[v] != NULL) {
             int j = 0;
